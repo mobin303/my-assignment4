@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curise Booking</title>
+    <title>Cruise Booking</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap"
@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <!--Header and Menu Section-->
+
     <header class="container">
         <nav>
             <ul>
@@ -26,7 +26,6 @@
         </nav>
     </header>
 
-    <!--Booking Section-->
     <main class="main-content container">
 
         <div class="booking-content">
@@ -122,8 +121,6 @@
             <h5>Have Your journey !!!</h5>
         </div>
     </main>
-
-    <!--Thank You-->
 </body>
 <script>
     function cruiseBookingChange(Booking, isIncrease) {
@@ -143,32 +140,34 @@
         }
         bookingInput.value = bookingNewCount;
         document.getElementById(Booking + '-Price').innerText = bookingTotal;
-        // subCalculator();
-     };
-    // <!-- function subCalculator() {
-    //     const firstClassCount = getBookingCount('firstClass');
-    //     const middleClassCount = getBookingCount('middle');
+        subCalculator();
+    };
 
-    //     const subTotal = middleClassCount * 100 + firstClassCount * 150;
-    //     document.getElementById('subtotal-price').innerText = '$' + subTotal
+    function subCalculator() {
+        const firstClassCount = getBookingCount('firstClass');
+        const middleClassCount = getBookingCount('middle');
 
-    //     const vatTotal = (subTotal * 10) / 100;
-    //     document.getElementById('vat-price').innerText = '$' + vatTotal;
+        const subTotal = middleClassCount * 100 + firstClassCount * 150;
+        document.getElementById('subtotal-price').innerText = '$' + subTotal
 
-    //     const grandTotal = subTotal + vatTotal;
-    //     document.getElementById('grand-total').innerText = '$' + grandTotal;
-    // };
-    // function getBookingCount(Booking) {
-    //     const bookingInput = document.getElementById(Booking + '-Count');
-    //     const bookingCount = parseInt(bookingInput.value);
-    //     return bookingCount;
-    // }; --> -->
-    // <!-- document.getElementById('booking').addEventListener('click', function () {
-    //     const firstDisplay = document.getElementById('first-display');
-    //     firstDisplay.style.display = 'none';
-    //     const secondDisplay = document.getElementById('second-display');
-    //     secondDisplay.style.display = 'block';
-    // });
-</script> -->
+        const vatTotal = (subTotal * 10) / 100;
+        document.getElementById('vat-price').innerText = '$' + vatTotal;
+
+        const grandTotal = subTotal + vatTotal;
+        document.getElementById('grand-total').innerText = '$' + grandTotal;
+    };
+    function getBookingCount(Booking) {
+        const bookingInput = document.getElementById(Booking + '-Count');
+        const bookingCount = parseInt(bookingInput.value);
+        return bookingCount;
+    };
+
+    document.getElementById('booking').addEventListener('click', function () {
+        const firstDisplay = document.getElementById('first-display');
+        firstDisplay.style.display = 'none';
+        const secondDisplay = document.getElementById('second-display');
+        secondDisplay.style.display = 'block';
+    });
+</script>
 
 </html>
